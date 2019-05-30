@@ -12,8 +12,8 @@ url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 cocktails_json = open(url).read
 cocktails = JSON.parse(cocktails_json)
 
-cocktails_array = cocktails["drinks"].values
+cocktails_array = cocktails["drinks"]
 
 cocktails_array.each do |cocktail|
-  Cocktail.create(cocktail)
+  Cocktail.create!(name: cocktail["strIngredient1"])
 end
