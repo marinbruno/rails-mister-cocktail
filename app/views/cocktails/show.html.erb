@@ -1,0 +1,17 @@
+<div class="container col-sm-4 offset-4">
+  <h1><%= @cocktail.name %></h1>
+  <h2>Ingredients:</h2>
+  <div id="ingredients-list" class="list-group">
+    <a class="list-group-item list-group-item-action" href="#list-item-1">Placeholder 1</a>
+    <a class="list-group-item list-group-item-action" href="#list-item-2">Placeholder 2</a>
+  </div>
+
+  <div data-spy="scroll" data-target="#ingredients-list" data-offset="0" class="scrollspy-description">
+    <h4 id="list-item-1">Placeholder 1</h4>
+    <p>ABCDDE</p>
+    <h4 id="list-item-2">Placeholder 2</h4>
+    <p>ANCDEVEM</p>
+  </div>
+
+  <%= link_to "Add a new dose", new_cocktail_path, class:"badge badge-primary" %>
+</div>

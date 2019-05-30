@@ -1,0 +1,10 @@
+<div class="container col-sm-4 offset-4">
+  <h1>Check our finest cocktails</h1>
+  <%= link_to "Add a new cocktail", new_cocktail_path, class:"badge badge-primary" %>
+  <ul class="list-group">
+  <% @cocktails.each do |cocktail| %>
+    <li class="list-group-item text-center"><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
+  <% end %>
+  </ul>
+
+</div>
