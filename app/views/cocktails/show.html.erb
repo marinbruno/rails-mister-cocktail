@@ -2,6 +2,11 @@
   <h1><%= @cocktail.name %></h1>
   <h2>Ingredients:</h2>
   <div id="ingredients-list" class="list-group">
+    <% @cocktail.doses.each do |dose| %>
+      <li><%= dose.ingredient.name %> (<%= link_to "delete", dose_path(dose), method: :delete %>)</li>
+    <% end %>
   </div>
   <%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail), class:"badge badge-primary" %>
+
+  <%= link_to "Back to cocktails menu", cocktails_path, class:"badge badge-secondary" %>
 </div>

@@ -1,1 +1,17 @@
-new.html.erb
+<div class="col-sm-4 offset-4">
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <% if @dose.errors.any? %>
+      <div class="errors-container">
+        <ul>
+          <% @dose.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+      <%= f.association :ingredient, collection: Ingredient.order(:name) %>
+      <%= f.input :amount %>
+      <%= f.input :description %>
+      <%= f.button :submit, class: "btn btn-success" %>
+  <% end %>
+</div>
