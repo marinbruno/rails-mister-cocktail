@@ -30,3 +30,8 @@ cocktails_array = cocktails["drinks"]
 cocktails_array.each do |cocktail|
   Cocktail.create!(name: cocktail["strDrink"])
 end
+
+url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_set.png"
+cocktail = Cocktail.new(name: 'Fake Drink')
+cocktail.remote_photo_url = url
+cocktail.save
