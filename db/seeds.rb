@@ -27,11 +27,9 @@ cocktails = JSON.parse(cocktails_json)
 
 cocktails_array = cocktails["drinks"]
 
+photo_url = "https://picsum.photos/200/300?grayscale"
 cocktails_array.each do |cocktail|
-  Cocktail.create!(name: cocktail["strDrink"])
+  new_cocktail = Cocktail.new(name: cocktail["strDrink"])
+  new_cocktail.remote_photo_url = url
+  cocktail.save
 end
-
-url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_set.png"
-cocktail = Cocktail.new(name: 'Fake Drink')
-cocktail.remote_photo_url = url
-cocktail.save
