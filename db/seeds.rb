@@ -30,6 +30,6 @@ cocktails_array = cocktails["drinks"]
 photo_url = "https://picsum.photos/200/300?grayscale"
 cocktails_array.each do |cocktail|
   new_cocktail = Cocktail.new(name: cocktail["strDrink"])
-  new_cocktail.remote_photo_url = url
-  cocktail.save
+  new_cocktail.remote_photo_url = photo_url
+  new_cocktail.save
 end
